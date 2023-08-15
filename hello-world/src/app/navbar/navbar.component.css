@@ -1,0 +1,19 @@
+.nav{
+    width: 100vw;
+    height: 10vh;
+    background: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    font-size: 50px;
+    font-weight: bold;
+    color: goldenrod;
+}
+.menus a{
+    text-decoration: none;
+    margin-right: 20px;
+    color: white;
+    font-size: 15px;
+}

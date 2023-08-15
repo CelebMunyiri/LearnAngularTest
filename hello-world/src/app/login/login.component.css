@@ -1,0 +1,12 @@
+.loginform{
+    width: 40vw;
+    padding: 20vw;
+    background: blueviolet;
+    display: flex;
+    flex-direction: column;
+}
+.loginform input{
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
