@@ -1,12 +1,12 @@
 <app-navbar></app-navbar>
 <div class="main">
-    <form action="" class="loginform">
+    <form action="" [formGroup]="form" class="loginform" (ngSubmit)="login()">
         <h4>Welcome Back Again!</h4>
         <label for="Email">
-            <input type="email" placeholder="jitu email" id="jituEmail">
+            <input type="email" placeholder="jitu email"  formControlName="jituEmail">
         </label>
         <label for="password">
-            <input type="password" placeholder="password" id="password">
+            <input type="password" placeholder="password" formControlName="password" >
         </label>
         <button type="submit">Login</button>
     </form>

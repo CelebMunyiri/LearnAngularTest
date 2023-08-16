@@ -12,4 +12,8 @@ sum(a:number,b:number){
   return a+b
 }
 
+sleep(){
+  throw new Error('You are still poor')
+}
+
 }
