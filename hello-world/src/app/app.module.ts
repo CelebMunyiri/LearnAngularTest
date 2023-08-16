@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FirstTestComponent } from './first-test/first-test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     FirstTestComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

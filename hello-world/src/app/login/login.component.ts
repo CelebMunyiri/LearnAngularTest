@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit{ 
 form!:FormGroup
 
-constructor(private fb:FormBuilder){}
+alertMsg=''
+
+constructor(private fb:FormBuilder,private apiService:ApiService){}
   ngOnInit(): void {
 this.form=this.fb.group({
   jituEmail:[null,[Validators.required]],
@@ -18,6 +21,13 @@ this.form=this.fb.group({
   }
 
   login(){
-     console.log(this.form.value)
+     
+
+     this.apiService.LoginService(this.form.value).subscribe(res=>{
+      
+      this.alertMsg=(res as any).message
+      
+     })
   }
 }
+ 
