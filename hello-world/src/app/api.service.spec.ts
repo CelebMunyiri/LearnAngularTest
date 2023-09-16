@@ -6,8 +6,11 @@ describe('ApiService', () => {
   let service: ApiService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ApiService);
+   httpClientSpy = {
+    post:jest.fn()
+   }
+
+   service=new ApiService(httpClientSpy)
   });
 
   it('should be created', () => {

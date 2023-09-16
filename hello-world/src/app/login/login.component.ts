@@ -25,7 +25,19 @@ this.form=this.fb.group({
 
      this.apiService.LoginService(this.form.value).subscribe(res=>{
       
-      this.alertMsg=(res as any).message
+      if((res as any).message){
+        this.alertMsg=(res as any).message
+
+        setTimeout(()=>{
+          this.alertMsg=''
+        },3000)
+      } else{
+        this.alertMsg=`Invalid Credentials`
+        setTimeout(()=>{
+          this.alertMsg=``
+        },4000)
+      }
+     
       
      })
   }

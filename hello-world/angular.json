@@ -73,12 +73,60 @@
           "options": {
             "browserTarget": "hello-world:build"
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "hello-world:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "hello-world:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "hello-world:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "hello-world:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "hello-world:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "hello-world:serve:production"
+            }
+          }
         }
-
       }
     }
   },
   "cli": {
-    "analytics": "87e6dfaf-54d6-4701-9726-fcf8eb58ccad"
+    "analytics": "87e6dfaf-54d6-4701-9726-fcf8eb58ccad",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }
